@@ -1,2 +1,30 @@
-<h1>Sales#new</h1>
-<p>Find me in app/views/sales/new.html.erb</p>
+<h1>Ingresar compra</h1>
+<%= form_with model: @sale do |f| %>
+  <div>
+    <%= f.label :cod, 'Código' %>
+    <%= f.number_field :cod %>
+  </div>
+  <div>
+    <%= f.label :detail, 'Detalle' %>
+    <%= f.text_area :detail %>
+  </div>
+  <div>
+    <%= f.label :category, 'Categoría' %>
+    <%= f.text_field :category %>
+  </div>
+  <div>
+    <%= f.label :value, 'Valor' %>
+    <%= f.number_field :value %>
+  </div>
+  <div>
+    <%= f.label :discount, 'Descuento (0 - 100)' %>
+    <%= f.range_field :discount, in: 0..100, step: '.1' %>
+  </div>
+  <div>
+    <%= f.label :tax_exempt?, 'Exento de IVA' %>
+    <%= f.check_box :tax_exempt? %>
+  </div>
+  <div>
+    <%= f.submit 'Registrar' %>
+  </div>
+<% end %>
