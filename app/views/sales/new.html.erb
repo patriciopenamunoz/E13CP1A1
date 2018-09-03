@@ -1,5 +1,5 @@
 <h1>Ingresar compra</h1>
-<%= form_with model: @sale do |f| %>
+<%= form_with model: @sale, local: true do |f| %>
   <div>
     <%= f.label :cod, 'Código' %>
     <%= f.number_field :cod %>
