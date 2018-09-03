@@ -1,0 +1,29 @@
+<h1>El registro fue almacenado con éxito!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Detalle</th>
+      <th>Categoría</th>
+      <th>Valor</th>
+      <th>Descuento</th>
+      <th>Impuesto</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @sales.each do |sale| %>
+    <tr>
+      <td><%= sale.cod %></td>
+      <td><%= sale.detail %></td>
+      <td><%= sale.category %></td>
+      <td><%= sale.value %></td>
+      <td><%= sale.discount %></td>
+      <td><%= sale.tax %></td>
+      <td><%= sale.total %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Volver', sales_new_path %>

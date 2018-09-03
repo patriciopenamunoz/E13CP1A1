@@ -15,6 +15,11 @@ class SalesController < ApplicationController
                   @sale.total * ((@sale.tax/100)+1)      : @sale.total
 
     @sale.save
+    redirect_to sales_done_path
+  end
+
+  def done
+    @sales = Sale.all
   end
 
   def sale_params
